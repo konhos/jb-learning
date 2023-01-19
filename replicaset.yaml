@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: spring
+    tier: fe
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: animals
+        image: supergiantkir/animals:bear
+        volumeMounts:
+        - name: host-persistent-storage
+          mountPath: /data/redis
+      - name: springapp
+        image: yanivomc/spring-music:latest
+        volumeMounts:
+        - name: host-persistent-storage
+          mountPath: /app/data
+      volumes:
+      - name: host-persistent-storage
+        hostPath:
+          path: /tmp/files
+          type: DirectoryOrCreate
