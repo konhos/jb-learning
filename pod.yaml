@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: animals
+spec:
+  containers:
+  - name: animals
+    image: supergiantkir/animals:bear
+    volumeMounts:
+    - name: host-persistent-storage
+      mountPath: /data/redis
+  - name: springapp
+    image: yanivomc/spring-music:latest
+    volumeMounts:
+    - name: host-persistent-storage
+      mountPath: /app/data
+  volumes:
+  - name: host-persistent-storage
+    hostPath:
+      path: /tmp/files
+      type: DirectoryOrCreate
