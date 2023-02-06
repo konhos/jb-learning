@@ -7,3 +7,6 @@ database_test:
 pods:
   image: yanivomc/springmusic
   tag: latest
+food:
+  drink: beer
+  eat: Peanut Butter and Jelly Sandwich

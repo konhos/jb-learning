@@ -6,3 +6,5 @@ data:
   dbname: {{ .Values.database_prod.dbname }}
   dbtable: {{ .Values.database_prod.dbtable }}
   image: {{ .Values.pods.image }}:{{ .Values.pods.tag }}
+  drink: {{ .Values.food.drink | upper }}
+  eat: {{ .Values.food.eat | trunc 13 | quote }}
