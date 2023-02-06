@@ -7,4 +7,4 @@ data:
   dbtable: {{ .Values.database_prod.dbtable }}
   image: {{ .Values.pods.image }}:{{ .Values.pods.tag }}
   drink: {{ .Values.food.drink | upper }}
-  eat: {{ .Values.food.eat | trunc 13 | quote }}
+  eat: {{ .Values.food.eat | trunc 13 | upper | quote }}
