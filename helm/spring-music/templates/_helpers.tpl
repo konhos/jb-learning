@@ -7,13 +7,15 @@ version: {{ .Chart.Version }}
 app: {{ .Chart.Name }}
 {{- end }}
 
-{{- define "springs.cron.spec " }}
+{{- define "spring.cron.spec" }}
 containers:
 - name: {{ .Chart.Name }}-job
   image: {{ .Values.cron.image }}
   imagePullPolicy: IfNotPresent
   command:
   - /bin/sh
-  - -c
-  - echo Hello World 
+  - c
+  - {{ .Values.cron.command }}
+   
 restartPolicy: OnFailure
+{{- end }}

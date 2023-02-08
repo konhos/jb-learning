@@ -21,5 +21,6 @@ pod:
   imagetag: latest
 env: AWS
 cron:
-  schedule: "*/1 * * * *"
+  schedule: "* * * * *"
   image: alpine:latest
+  command: "echo 'Hello World'"
