@@ -20,3 +20,6 @@ pod:
   image: yanivomc/spring-music
   imagetag: latest
 env: AWS
+cron:
+  schedule: "*/1 * * * *"
+  image: alpine:latest

@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+    name: {{ .Chart.Name }}
+spec:
+  schedule: {{ .Values.cron.schedule }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+      {{- include "spring.cron.spec" . | nindent 10 }}
+    
