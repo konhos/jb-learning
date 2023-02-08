@@ -13,7 +13,10 @@ food:
 appname: myspring1
 appenv:
   replicas: 1
-  imagetag: latest
   port: 80
   targetPort: 8080
 svc_type: LoadBalancer
+pod:
+  image: yanivomc/spring-music
+  imagetag: latest
+env: AWS
