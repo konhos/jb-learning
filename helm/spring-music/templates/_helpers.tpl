@@ -14,7 +14,7 @@ containers:
   imagePullPolicy: IfNotPresent
   command:
   - /bin/sh
-  - c
+  - -c
   - {{ .Values.cron.command }}
    
 restartPolicy: OnFailure
