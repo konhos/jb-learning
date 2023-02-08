@@ -10,3 +10,10 @@ pods:
 food:
   drink: beer
   eat: Peanut Butter and Jelly Sandwich
+appname: myspring1
+appenv:
+  replicas: 1
+  imagetag: latest
+  port: 80
+  targetPort: 8080
+svc_type: LoadBalancer
